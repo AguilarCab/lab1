@@ -4,21 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Index</title>
+    <title>Eliminar</title>
 </head>
 <body>
-    <h1>Opciones</h1>
-
-    <hr />
-    <a href="/Video/Index">Lista de Videos<a/>
-    <br />
-    <a href="/Video/Agregar">Agregar Video</a> 
-    <br />
-    <a href="/Video/Actializar">Actualizar video</a>
-    <br />
-    <a href="/video/Eliminar">Borrar video</a>
-
-
-
+    <div>
+    
+    </div>
 </body>
 </html>
