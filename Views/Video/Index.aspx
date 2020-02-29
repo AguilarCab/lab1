@@ -9,24 +9,15 @@
 <body>
 
     <h1> Mi Lista: </h1>
-    Hay <%: ((System.Data.DataTable)ViewData["video"]).Rows.Count %> Videos
+    Hay <%: ((System.Data.DataTable)ViewData["Videos"]).Rows.Count %> Videos
     <br />
     <% 
-        foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["video"]).Rows)
+        foreach (System.Data.DataRow ren in ((System.Data.DataTable)ViewData["videos"]).Rows)
         {%>
-
-     <p><%: ren["titulo"].ToString()%></p>
-
-     <iframe width="560" height="315" src=
-     "<%:video["url".Tostring() %>" 
-     frameborder="0" allow="accelerometer; autoplay; 
-     encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <%   }
-        
+            <p> <%: ren["titulo"].ToString() %>  </p>
+            <iframe width="560" height="315" src="<%: ren["url"].ToString() %>"frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
+    <%  }  
     %>
-
-            
-
 </body>
 </html>

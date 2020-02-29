@@ -23,30 +23,38 @@ namespace MvcPlantilla.Controllers
             
       }
 
-        //public ActionResult Agregar()
-        //{
-          //  return View();
-        //}
+        /*public ActionResult Agregar()
+        {
+            return View();
+        }*/
 
-        //public ActionResult Agregar(int idvideo, string titulo, int reproducciones, string url)
-       //{
+        public ActionResult Agregar()
+        {
+            
+            return View();
+        }
 
-        //return View();
-        //List<SqlParameter> parametros = new List<SqlParameter>();
-        //parametros.add(new SqlParameter("@idvideo", idvideo));
-        //parametros.Add(new SqlParameter("@titulo", titulo));
-        //parametros.Add(new SqlParameter("@reproducciones", reproducciones));
-        //parametros.Add(new SqlParameter("@url", url));
+        public ActionResult InsertarRegistro()
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            int idvideo = Convert.ToInt16(Request.Form["idVideo"]);
+            string titulo = Convert.ToString(Request.Form["titulo"]);
+            int reproducciones = Convert.ToInt16(Request.Form["reproducciones"]); 
+            string url = Convert.ToString(Request.Form["url"]); 
+            
+            parametros.Add(new SqlParameter("@idvideo", idvideo));
+            parametros.Add(new SqlParameter("@titulo", titulo));
+            parametros.Add(new SqlParameter("@reproducciones", reproducciones));
+            parametros.Add(new SqlParameter("@url", url));
 
-         //BaseHelper EjecutarSentencia("INSERT INTO Videos" + "VALUES (@idvideo, @titulo, @reproducciones, @url)", CommandType.Text, parametros);   
+            int registros = BaseHelper.ejecutarAgregar("INSERT INTO Videos " + "VALUES (@idvideo, @titulo, @reproducciones, @url)", CommandType.Text, parametros);
+            if(registros>0)
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Registro agregado')</script>");
+            
+           return View();
+        }
 
-            //return View("Mensaje");
 
-        //}
-          //  return View();
-        //}
-       
-    
 
         public ActionResult Actualizar()
         {

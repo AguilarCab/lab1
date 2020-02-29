@@ -8,24 +8,31 @@
 </head>
 <body>
     <h1>
+     
+   <form method="post" action="InsertarRegistro">
+        <table>
+            <tr>
+                <td>Video Id</td>
+                <td><input type="text" name="idVideo" /></td>
+             </tr>
+             <tr>
+                <td>Titulo</td>
+                <td><input type="text" name="titulo" /></td>
+             </tr>
+             <tr>
+                <td>Reproducciones</td>
+                <td><input type="text" name="reproducciones" /></td>
+             </tr>
+             <tr>
+                <td>URL</td>
+                <td><input type="text" name="URL" /></td>
+             </tr>
+             <tr>
+                <td colspan="2"><input type="submit" value="Submit"/></td>
+             </tr>
+        </table>
+    </form>
 
-    <label for= "idVideo">idvideo</label>
-    <input type= "text" name= "idVideo"/>
-
-    
-    <label for= "titulo">titulo</label>
-    <input type= "text" name= "titulo"/>
-
-
-    <label for= "reproducciones">reproducciones</label>
-    <input type= "text" name= "reproducciones"/>
-
-    <label for= "url">url</label>
-    <input type= "text" name= "url"/>
-    
-     <input type= "submit" Value= "registrar video"/> 
     </h1>
-    
-    
 </body>
 </html>
