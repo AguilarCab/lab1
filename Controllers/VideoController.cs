@@ -34,6 +34,32 @@ namespace MvcPlantilla.Controllers
             return View();
         }
 
+        public ActionResult EliminarRegistro()
+        {
+            string error = string.Empty;
+            int registros = 0;
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            try
+            {
+                int idvideo = Convert.ToInt16(Request.Form["idVideo"]);
+                parametros.Add(new SqlParameter("@idvideo", idvideo));
+                registros = BaseHelper.ejecutarSentencia("DELETE FROM Videos " + " WHERE idvideo = @idvideo", CommandType.Text, out error, parametros);
+                /*if (error != string.Empty)
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Error:'" + error + "')</script>");*/
+                if (registros == 0)
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Registro no encontrado')</script>");
+                else if (registros > 0)
+                    Response.Write("<script LANGUAGE='JavaScript' >alert('Registro eliminado')</script>");
+            }
+            catch (Exception e)
+            {
+                error = e.Message;
+            }
+            if (error != string.Empty)
+                Response.Write("<script LANGUAGE='JavaScript' >alert('Error:'" + error + "')</script>");
+            
+            return View();
+        }
         public ActionResult InsertarRegistro()
         {
             List<SqlParameter> parametros = new List<SqlParameter>();

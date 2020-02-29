@@ -81,6 +81,7 @@
     <Content Include="Views\Video\Actualizar.aspx" />
     <Content Include="Views\Video\Agregar.aspx" />
     <Content Include="Views\Video\Eliminar.aspx" />
+    <Content Include="Views\Video\EliminarRegistro.aspx" />
     <Content Include="Views\Video\Index.aspx" />
     <Content Include="Views\Video\InsertarRegistro.aspx" />
     <Content Include="Web.config" />

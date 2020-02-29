@@ -9,10 +9,17 @@
 <body>
     
     <h1>
-    <label for= "idVideo">idvideo</label>
-    <input type= "text" name= "idVideo"/>
-
-    <input type= "submit" Value= "borrar video"/>
+    <form method="post" action="EliminarRegistro">
+        <table>
+            <tr>
+                <td>Video Id</td>
+                <td><input type="text" name="idVideo" /></td>
+             </tr>
+             <tr>
+                <td colspan="2"><input type="submit" value="Borrar registro"/></td>
+             </tr>
+        </table>
+    </form>
     </h1>
 
 </body>

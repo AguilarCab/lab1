@@ -13,12 +13,14 @@ namespace MVCPlantilla.Utilerias
     public class BaseHelper
     {
         public static int ejecutarSentencia(String sentencia,
-                           CommandType tipo,
+                           CommandType tipo,out string mensaje,
                            List<SqlParameter> parametros = null)
         {
+            mensaje = string.Empty;
             SqlConnection con = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             int filas;
+            filas = 0;
             try
             {
                 con.ConnectionString = ConfigurationManager.ConnectionStrings["cnn"].ConnectionString;
@@ -34,7 +36,11 @@ namespace MVCPlantilla.Utilerias
 
                 filas = comando.ExecuteNonQuery();
             } //try
-            catch (Exception) { throw; }
+            catch (Exception e) 
+            {
+                mensaje = e.Message;
+                //throw; 
+            }
             finally
             {
                 con.Close();
@@ -42,7 +48,7 @@ namespace MVCPlantilla.Utilerias
             return filas;
         } // funcion ejecutar sentencia  
 
-        public void MsgBox(String ex, Page pg, Object obj)
+        public static void MsgBox(String ex, Page pg, Object obj)
         {
             string s = "<SCRIPT language='javascript'>alert('" + ex.Replace("\r\n", "\\n").Replace("'", "") + "'); </SCRIPT>";
             Type cstype = obj.GetType();
@@ -55,7 +61,7 @@ namespace MVCPlantilla.Utilerias
             SqlConnection con = new SqlConnection();
             SqlCommand comando = new SqlCommand();
             SqlDataAdapter adaptador = new SqlDataAdapter();
-            DataTable datos = new DataTable();
+
             int RegistrosAfectados = 0;
             try
             {

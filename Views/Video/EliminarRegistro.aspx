@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>InsertarRegistro</title>
+    <title>EliminarRegistro</title>
     <meta http-equiv="refresh"
-        content="5; url = /" />
+     content="5; url = /" />
 </head>
 <body>
+    
     <div>
         <h1 style="text-align:center;color:green;">  
          Redireccionando!  
@@ -20,5 +21,8 @@
         en 5 segundos.  
     </p>  
     </div>
+
+
+   
 </body>
 </html>
