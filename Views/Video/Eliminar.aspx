@@ -7,8 +7,13 @@
     <title>Eliminar</title>
 </head>
 <body>
-    <div>
     
-    </div>
+    <h1>
+    <label for= "idVideo">idvideo</label>
+    <input type= "text" name= "idVideo"/>
+
+    <input type= "submit" Value= "borrar video"/>
+    </h1>
+
 </body>
 </html>

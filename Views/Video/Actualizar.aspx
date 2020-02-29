@@ -7,8 +7,24 @@
     <title>Actualizar</title>
 </head>
 <body>
-    <div>
+    <h1>
+
+    <label for= "idvideo">idvideo</label>
+    <input type= "text" name= "idvideo"/>
+
     
-    </div>
+    <label for= "titulo">titulo</label>
+    <input type= "text" name= "titulo"/>
+
+
+    <label for= "reproducciones">reproducciones</label>
+    <input type= "text" name= "reproducciones"/>
+
+    <label for= "url">url</label>
+    <input type= "text" name= "url"/>
+
+     <input type= "submit" Value= "actualizar video"/>
+
+        </h1>
 </body>
 </html>
